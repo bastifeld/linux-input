@@ -1,0 +1,21 @@
+{
+  "name": "linux-input",
+  "version": "0.1.0",
+  "author": "Sebastian Feld",
+  "description": "Reads /dev/input/event from a linux device",
+
+  "main": "./lib/js/input.js",
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bastifeld/linux-input.git"
+  },
+  "keywords": [
+
+  ],
+  "dependencies" : {
+   
+  }
+ 
+  
+}
