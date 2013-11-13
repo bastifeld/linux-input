@@ -2,15 +2,18 @@
 fs = require('fs') 
 
 EventEmitter = require('events').EventEmitter
-KEYS = require './key_codes' 
+
+
 
 EV_KEY = 1
 EVENT_TYPES = ['keyup','keypress','keydown']
 
 	 
 class Keyboard extends EventEmitter
-	
+	@KEYS = require('./key_codes')
+		
 	constructor: (dev) -> 	    
+		
 		@dev = dev
 		@bufferSize = 24
 		@buf = new Buffer(@bufferSize);    
@@ -66,6 +69,9 @@ class Keyboard extends EventEmitter
 		console.log "keycode  #{keyCode} but return null"
 		return null;
 		
+
+
+
 
 
 module.exports = Keyboard
