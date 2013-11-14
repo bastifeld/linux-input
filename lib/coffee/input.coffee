@@ -63,7 +63,7 @@ class Keyboard extends EventEmitter
 		else
 			return null
 
-	findKeyID: (keyCode) ->
+	findKeyName: (keyCode) ->
 		for name, code of KEYS
 			if code == keyCode
 				return name
