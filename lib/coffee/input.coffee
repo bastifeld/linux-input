@@ -56,7 +56,7 @@ class Keyboard extends EventEmitter
 				# timeMS: buffer.readUInt64LE(4)
 				keyCode: buffer.readUInt16LE(10)
 
-			#event.keyId = @findKeyID(event.keyCode);
+			event.keyName = @findKeyName(event.keyCode);
 			event.keyId = event.keyCode;
 			event.type = EVENT_TYPES[ buffer.readUInt32LE(12) ];
 			return event;
