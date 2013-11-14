@@ -2,7 +2,7 @@
 fs = require('fs') 
 
 EventEmitter = require('events').EventEmitter
-
+KEYS = require('./key_codes')
 
 
 EV_KEY = 1
@@ -10,7 +10,7 @@ EVENT_TYPES = ['keyup','keypress','keydown']
 
 	 
 class Keyboard extends EventEmitter
-	@KEYS = require('./key_codes')
+	
 		
 	constructor: (dev) -> 	    
 		
@@ -40,6 +40,7 @@ class Keyboard extends EventEmitter
 			@startRead()
 
 
+
 	close: (callback)  ->
 		fs.close(@fd, () ->
 			console.log("close")
@@ -55,7 +56,8 @@ class Keyboard extends EventEmitter
 				# timeMS: buffer.readUInt64LE(4)
 				keyCode: buffer.readUInt16LE(10)
 
-			event.keyId = @findKeyID(event.keyCode);
+			#event.keyId = @findKeyID(event.keyCode);
+			event.keyId = event.keyCode;
 			event.type = EVENT_TYPES[ buffer.readUInt32LE(12) ];
 			return event;
 		else
@@ -71,7 +73,7 @@ class Keyboard extends EventEmitter
 		
 
 
-
+Keyboard.KEYS = KEYS
 
 
 module.exports = Keyboard
