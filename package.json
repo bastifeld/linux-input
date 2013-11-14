@@ -1,6 +1,6 @@
 {
   "name": "linux-input",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "author": "Sebastian Feld",
   "description": "Reads /dev/input/event from a linux device",
 
